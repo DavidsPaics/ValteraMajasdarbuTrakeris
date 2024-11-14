@@ -5,14 +5,6 @@ from tkinter import messagebox
 
 def get_users_who_solved(users, problem_id):
     completed_users = []
-    
-    match = re.match(r"(\d+)([A-Z]\d*)", problem_id)
-    if not match:
-        print("Invalid problem ID format.")
-        return []
-
-    contest_id = int(match.group(1))
-    problem_index = match.group(2)
 
     for user in users:
         url = f"https://codeforces.com/api/user.status?handle={user}&from=1&count=1000"
@@ -28,8 +20,7 @@ def get_users_who_solved(users, problem_id):
             continue
 
         for submission in submissions['result']:
-            if (submission['problem']['contestId'] == contest_id and
-                submission['problem']['index'] == problem_index and
+            if (str(submission['problem']['contestId']) + str(submission['problem']['index']) == problem_id and
                 submission['verdict'] == 'OK'):
                 completed_users.append(user)
                 break
