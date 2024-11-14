@@ -18,7 +18,7 @@
 Dati tiek saglabāti šādā formātā:
 
 ```
-LietotajaVards - punkti ([..]bonusPunkti)
+LietotajaVards - punkti (bonusPunktiUnSimboli)
 ```
 
 Bonusa punkti tiek rēķināti šādi (katrai rindiņai):
