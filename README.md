@@ -5,8 +5,15 @@
 1.  `git clone https://github.com/DavidsPaics/ValteraMajasdarbuTrakeris.git`
 2.  Iekopē mājasdarbu rezultātus `data/majasdarbi.txt`
 3.  Iekopē visus lietotāju vārdus, ko izsekot `data/lietotaji.txt`
+
+### Palaist no souce
+
 4.  `pip install -r requirements.txt`
 5.  `python main.py`
+
+### Vai palaist jau kompilēto versiju
+
+4.  `main`
 
 ## Lietošana
 
