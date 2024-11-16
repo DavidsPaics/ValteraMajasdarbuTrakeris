@@ -3,7 +3,6 @@ try:
     import requests
 except:
     print("Please install requests")
-    input("Press enter to exit...")
     exit()
 import re, time
 import tkinter as tk
@@ -12,7 +11,7 @@ from tkinter import messagebox, ttk
 import tkinter.simpledialog as simpledialog
 
 config_file_path = "data/config.txt"
-count_value = 1000
+count_value = 500
 
 def load_count():
     global count_value
@@ -34,8 +33,8 @@ def edit_count():
     global count_value
     new_count = simpledialog.askinteger(
         "Izmainīt iesūtījumu skaitu",
-        "Ievadi cik jaunākos iesūtījumus pārbuaudīt no katra lietotāja (Mazliek uzlabo ātrumu):",
-        initialvalue=count_value, minvalue=1, maxvalue=2000
+        "Ievadi cik jaunākos iesūtījumus pārbuaudīt no katra lietotāja (Ulabo ātrumu):",
+        initialvalue=count_value, minvalue=1, maxvalue=1000
     )
     if new_count is not None:
         count_value = new_count
@@ -63,6 +62,7 @@ def get_users_who_solved(users, problem_id, progress_var, status_text_var):
                 time.sleep(1)
                 retries -= 1
             else:
+                print("ok")
                 break
         
         if retries == 0:
@@ -97,7 +97,6 @@ def process_task(justSort=False):
         
     # Read scores
     if not(os.path.exists("data/majasdarbi.txt")):
-        print("Majasdarbi.txt not found")
         open("data/majasdarbi.txt", 'a').close()
     
     with open("data/majasdarbi.txt", 'r') as f:
@@ -151,6 +150,8 @@ def process_task(justSort=False):
 
     if (justSort):
         messagebox.showinfo("Super", "Darīts!")
+    else:   
+        exit()
 
 root = tk.Tk()
 root.title("Valtera superīgā mājasdarbu programma")
