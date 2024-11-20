@@ -2,7 +2,7 @@ import os
 try:
     import requests
 except:
-    print("Please install requests")
+    print("Please install \"requests\"")
     exit()
 import re, time
 import tkinter as tk
